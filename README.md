@@ -11,7 +11,7 @@ This repo contains the AI ML projects.
 This workflow reduces unnecessary or low-quality AI-generated comments, ensures human validation from experienced reviewers, and improves efficiency by minimizing manual review effort and saving development time.
 
 # 3.  AI Cluster Details Auto-Response System
-  FileName : Not applicable (integrated within webhook service)  
+  FileName : Cluster.yml (Repo : https://github.com/Greeshma-babu/DefectCreation)
   Description : This system is designed to process GitHub Issue tracking queries related to cluster details. When a developer requests cluster information in an issue, the system uses Natural Language Processing (NLP) along with a Hugging Face AI model to interpret and extract the intent from the input text. Based on the identified cluster number, the system dynamically retrieves and shares the corresponding cluster-specific details using resource links. This enables automated understanding of developer queries and provides relevant contextual information without manual intervention.
 
 # Techincal Blog 
