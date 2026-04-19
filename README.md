@@ -5,7 +5,7 @@ This repository contains a collection of AI, NLP, and Machine Learning projects 
 
 1. [AI Movie Review Analysis](#1-ai-movie-review-analysis)  
 2. [AI Code Review Integration Project](#2-ai-code-review-integration-project)  
-3. [AI Cluster Details Automatic Response System](#-ai-cluster-details-automatic-response-system)
+3. [AI Cluster Details Automatic Response System](#ai-cluster-details-automatic-response-system) 
 4. [Technical Blog](#technical-blog)
 
 
