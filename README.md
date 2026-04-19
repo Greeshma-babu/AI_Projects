@@ -43,7 +43,7 @@ Features
 - Slack-based approval workflow
 - GitHub PR integration
 
-# 3. AI Cluster Details Automatic Response System
+# AI Cluster Details Automatic Response System
   FileName : Cluster.yml (Repo : https://github.com/Greeshma-babu/DefectCreation)  
   
   Description : This system is designed to process GitHub Issue tracking queries related to cluster details. When a developer requests cluster information in an issue, the system uses Natural Language Processing (NLP) along with a Hugging Face AI model to interpret and extract the intent from the input text. Based on the identified cluster number, the system dynamically retrieves and shares the corresponding cluster-specific details using resource links. This enables automated understanding of developer queries and provides correct cluster information without manual intervention.
