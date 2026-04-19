@@ -1,5 +1,12 @@
-# AI_Projects
+# Artificial Intelligence (AI) Projects
 This repository contains a collection of AI, NLP, and Machine Learning projects focused on real-world use cases such as sentiment analysis, code review automation, and intelligent issue handling.
+
+## List of Projects
+
+1. [AI Movie Review Analysis](#1-ai-movie-review-analysis)  
+2. [AI Code Review Integration Project](#2-ai-code-review-integration-project)  
+3. [AI Cluster Details Auto-Response System](#3-ai-cluster-details-auto-response-system)  
+4. [Technical Blog](#technical-blog)
 
 # 1. AI Movie Review Analysis
   File Name: AI_Movie_Review_Analysis.ipynb  
@@ -50,4 +57,4 @@ Tech Stack:
 
    Description : This blog presents a product success prediction use case using historical data, showing how to design and operationalize an end-to-end AI solution from raw data to production. It highlights how IBM watsonx.data, IBM AutoAI, and IBM Orchestration Pipelines work together to streamline data management, automate model building, and manage workflow execution, enabling faster insights, reduced operational complexity, and enterprise-grade governance.
    
-   Link : https://medium.com/@greeshmababu99/tutorial-building-an-enterprise-ai-pipeline-with-ibm-watsonx-data-a4f9e3b589e6?source=email-0c1dc91e1cea-1776320285081-newsletter.subscribeToProfile-------------------------75f6e3c0_6128_4c4b_a2af_9df3cf9d1eb9--------59a4b2cd594b
+   Link : [Tutorial: Building an Enterprise AI Pipeline with IBM watsonx.data, IBM AutoAI & IBM Orchestration Pipelines](https://medium.com/@greeshmababu99/tutorial-building-an-enterprise-ai-pipeline-with-ibm-watsonx-data-a4f9e3b589e6)
