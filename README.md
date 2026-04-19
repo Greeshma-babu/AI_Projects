@@ -8,6 +8,7 @@ This repository contains a collection of AI, NLP, and Machine Learning projects 
 3. [AI Cluster Details Auto-Response System](#3-ai-cluster-details-auto-response-system)  
 4. [Technical Blog](#technical-blog)
 
+
 # 1. AI Movie Review Analysis
   File Name: AI_Movie_Review_Analysis.ipynb  
   
@@ -52,7 +53,7 @@ Tech Stack:
 - Hugging Face
 - GitHub Issues
   
-# Techincal Blog 
+# Technical Blog 
    Title : Tutorial: Building an Enterprise AI Pipeline with IBM watsonx.data, IBM AutoAI & IBM Orchestration Pipelines.  
 
    Description : This blog presents a product success prediction use case using historical data, showing how to design and operationalize an end-to-end AI solution from raw data to production. It highlights how IBM watsonx.data, IBM AutoAI, and IBM Orchestration Pipelines work together to streamline data management, automate model building, and manage workflow execution, enabling faster insights, reduced operational complexity, and enterprise-grade governance.
