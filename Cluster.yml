@@ -1,0 +1,112 @@
+name: Cluster Access Bot (AI Enabled)
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  share-cluster:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 1: Send comment to Hugging Face
+      - name: Detect cluster request using Hugging Face
+        id: ai
+        run: |
+          COMMENT="${{ github.event.comment.body }}"
+          echo "Comment: $COMMENT"
+
+          RESPONSE=$(curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.HF_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            https://api-inference.huggingface.co/models/facebook/bart-large-mnli \
+            -d "{
+              \"inputs\": \"$COMMENT\",
+              \"parameters\": {
+                \"candidate_labels\": [\"request cluster access\", \"not related\"]
+              }
+            }")
+
+          echo "$RESPONSE"
+
+          SCORE=$(echo "$RESPONSE" | jq '.scores[0]')
+
+          if (( $(echo "$SCORE > 0.7" | bc -l) )); then
+            echo "intent=true" >> $GITHUB_OUTPUT
+          else
+            echo "intent=false" >> $GITHUB_OUTPUT
+          fi
+
+      # Step 2: Stop if not cluster intent
+      - name: Stop if not cluster request
+        if: steps.ai.outputs.intent == 'false'
+        run: |
+          echo "Not a cluster access request."
+          exit 0
+
+      # Step 3: Extract cluster number from text
+      - name: Extract cluster ID
+        id: extract
+        run: |
+          COMMENT="${{ github.event.comment.body }}"
+
+          if [[ "$COMMENT" =~ ([0-9]{3,6}) ]]; then
+            echo "cluster_id=${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
+          else
+            echo "cluster_id=none" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Stop if no cluster ID found
+        if: steps.extract.outputs.cluster_id == 'none'
+        run: exit 0
+
+      # Step 4: Lookup cluster link
+      - name: Get cluster link
+        id: fetch
+        run: |
+          CLUSTER_ID=${{ steps.extract.outputs.cluster_id }}
+          LINK=$(jq -r --arg id "$CLUSTER_ID" '.[$id]' clusters.json)
+
+          if [ "$LINK" = "null" ] || [ -z "$LINK" ]; then
+            echo "found=false" >> $GITHUB_OUTPUT
+          else
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "link=$LINK" >> $GITHUB_OUTPUT
+          fi
+
+      # Step 5: Reply if found
+      - name: Reply with cluster link
+        if: steps.fetch.outputs.found == 'true'
+        run: |
+          USER="${{ github.event.comment.user.login }}"
+          COMMENT_BODY="${{ github.event.comment.body }}"
+
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \
+          -d "{
+            \"body\": \"@${USER}\n\n> ${COMMENT_BODY}\n\nHere is the cluster ${{ steps.extract.outputs.cluster_id }} link:\n${{ steps.fetch.outputs.link }}\"
+          }"
+
+      # Step 6: Reply if not found
+      - name: Reply cluster not available
+        if: steps.fetch.outputs.found == 'false'
+        run: |
+          USER="${{ github.event.comment.user.login }}"
+          COMMENT_BODY="${{ github.event.comment.body }}"
+
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \
+          -d "{
+            \"body\": \"@${USER}\n\n> ${COMMENT_BODY}\n\n❌ Cluster not available.\"
+          }"
