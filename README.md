@@ -52,6 +52,9 @@ Tech Stack:
 - NLP
 - Hugging Face
 - GitHub Issues
+
+# 4. AI Insurance Processor using LangGraph 
+- Setup the Postgres database
   
 # Technical Blog 
    Title : Tutorial: Building an Enterprise AI Pipeline with IBM watsonx.data, IBM AutoAI & IBM Orchestration Pipelines.  
