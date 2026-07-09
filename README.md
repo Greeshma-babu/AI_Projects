@@ -7,7 +7,7 @@ This repository contains a collection of AI, NLP, and Machine Learning projects 
 2. [AI Code Review Integration Project](#2-ai-code-review-integration-project)  
 3. [AI Cluster Details Automatic Response System](#3-ai-cluster-details-automatic-response-system) 
 4. [Technical Blog](#technical-blog)
-
+5. [Image Classification using Transfer Learning (PyTorch)](#Image Classification using Transfer Learning (PyTorch))
 
 # 1. AI Movie Review Analysis
   File Name: AI_Movie_Review_Analysis.ipynb  
@@ -55,6 +55,18 @@ Tech Stack:
 
 # 4. AI Insurance Processor using LangGraph 
 - Setup the Postgres database
+
+# 5. Image Classification using Transfer Learning (PyTorch)
+  - Cat and Dog Classification
+  - Animal, Bird and Person Classification
+  - Train should contain train and val folder with classified image : 
+    datasets: ['val', 'train']
+    inside train: ['Bird', 'Animal', 'Person']
+    inside val:['Bird', 'Animal', 'Person']
+
+    This project implements an image classification system using PyTorch and a pretrained ResNet-18 model. The objective is to classify images into one of the following three categories: Animal, Bird, Person. Instead of training a deep neural network from scratch, the project uses Transfer Learning, where a model already trained on the ImageNet dataset is adapted to classify a new custom dataset.
+    Technologies Used: Python, PyTorch, Torchvision, Google Colab, PIL (Python Imaging Library), NumPy, Matplotlib
+
   
 # Technical Blog 
    Title : Tutorial: Building an Enterprise AI Pipeline with IBM watsonx.data, IBM AutoAI & IBM Orchestration Pipelines.  
