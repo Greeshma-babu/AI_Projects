@@ -67,7 +67,8 @@ Tech Stack:
     This project implements an image classification system using PyTorch and a pretrained ResNet-18 model. The objective is to classify images into one of the following three categories: Animal, Bird, Person. Instead of training a deep neural network from scratch, the project uses Transfer Learning, where a model already trained on the ImageNet dataset is adapted to classify a new custom dataset.
 
     Technologies Used: Python, PyTorch, Torchvision, Google Colab, PIL (Python Imaging Library), NumPy, Matplotlib
-    Files: https://github.com/Greeshma-babu/AI_Projects/blob/main/ImageClassificationResNet_18.ipynb,https://github.com/Greeshma-babu/AI_Projects/blob/main/ImageClassification_Animal_Bird_Person_ResNet_18.ipynb,https://github.com/Greeshma-babu/AI_Projects/blob/main/Test_Datasets_Bird_Animal_Person.zip,https://github.com/Greeshma-babu/AI_Projects/blob/main/Test_Dog_Image.jpg, https://github.com/Greeshma-babu/AI_Projects/blob/main/datasets.zip, https://github.com/Greeshma-babu/AI_Projects/blob/main/Datasets_Bird_Animal_Person.zip
+    Files: https://github.com/Greeshma-babu/AI_Projects/blob/main/ImageClassificationResNet_18.ipynb,https://github.com/Greeshma-babu/AI_Projects/blob/main/ImageClassification_Animal_Bird_Person_ResNet_18.ipynb
+    Test Data: https://github.com/Greeshma-babu/AI_Projects/blob/main/Test_Datasets_Bird_Animal_Person.zip,https://github.com/Greeshma-babu/AI_Projects/blob/main/Test_Dog_Image.jpg, https://github.com/Greeshma-babu/AI_Projects/blob/main/datasets.zip, https://github.com/Greeshma-babu/AI_Projects/blob/main/Datasets_Bird_Animal_Person.zip
   
 # Technical Blog 
    Title : Tutorial: Building an Enterprise AI Pipeline with IBM watsonx.data, IBM AutoAI & IBM Orchestration Pipelines.  
