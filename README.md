@@ -68,6 +68,7 @@ Tech Stack:
 
     Technologies Used: Python, PyTorch, Torchvision, Google Colab, PIL (Python Imaging Library), NumPy, Matplotlib
     Files: https://github.com/Greeshma-babu/AI_Projects/blob/main/ImageClassificationResNet_18.ipynb,https://github.com/Greeshma-babu/AI_Projects/blob/main/ImageClassification_Animal_Bird_Person_ResNet_18.ipynb
+
     Test Data: https://github.com/Greeshma-babu/AI_Projects/blob/main/Test_Datasets_Bird_Animal_Person.zip,https://github.com/Greeshma-babu/AI_Projects/blob/main/Test_Dog_Image.jpg, https://github.com/Greeshma-babu/AI_Projects/blob/main/datasets.zip, https://github.com/Greeshma-babu/AI_Projects/blob/main/Datasets_Bird_Animal_Person.zip
   
 # Technical Blog 
